@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surya Puthram</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #121212;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: #ffffff;
+        font-family: 'Arial', sans-serif;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .sun-icon {
+        position: absolute;
+        font-size: 1200px; 
+        color: rgba(255, 217, 0, 0.594); 
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        text-align: center;
+        color: #ffea80;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        z-index: 1;
+    }
+
+    .container {
+        border-radius: 30px;
+        overflow: hidden; 
+        width: 600px;
+        height: 500px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        cursor: pointer;
+        z-index: 1;
+    }
+
+    .container img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        border-radius: 30px;
+        transition: opacity 0.4s ease-in-out;
+    }
+
+    #passwordOverlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.95);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        transition: opacity 0.3s ease;
+    }
+
+    #passwordOverlay.hidden {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    #passwordOverlay h2 {
+        margin-bottom: 20px;
+        color: #ffea80;
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    }
+
+    #passwordOverlay input[type="password"] {
+        padding: 10px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        width: 250px;
+        text-align: center;
+    }
+
+    #passwordOverlay button {
+        padding: 10px 20px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: #ffea80;
+        color: #121212;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+
+    #passwordOverlay button:hover {
+        background-color: #ffd700;
+    }
+</style>
+</head>
+<body>
+<div id="passwordOverlay">
+    <h2>Enter Password to Access</h2>
+    <input type="password" id="passwordInput" placeholder="Password">
+    <button id="submitPassword">Enter</button>
+    <p id="errorMsg" style="color:red; margin-top:10px; display:none;">Wrong password!</p>
+</div>    
+        <i class="fa-solid fa-sun sun-icon"></i>
+    <h1>HAPPY TEACHERS' DAY</h1>
+    <div class="container">
+        <img src="https://scontent.fmaa2-1.fna.fbcdn.net/o1/v/t0/f2/m339/AQP9mZE28ChEZaTxqMtfkdh3AehgPfl9Hs-jvu_pr23mcdkowXT43th7n9HmjAtaKti6eVogsettirjwls392JskCuxnN-3IAHp0DeD5TrNyzYxWj3tCn1FLvQUNm6sA.jpeg?_nc_ht=scontent.fmaa2-1.fna.fbcdn.net&_nc_gid=fkAV9I5UgVM-Tw_YVZvFpg&_nc_cat=109&_nc_oc=AdnUJCqGwJ58ErqRRzBJ_ruJ-TyQMzUiSYHEf97Q_d-LqctFN7uNmdLQl2foBfrtHvZ7DiBtYkBwJJ2ao3ttuyAu&ccb=9-4&oh=00_AfY1J4oTEOMzzM3NRhm7iqCKa3puOQlOHcsnwtbBQiCBsw&oe=68BC759E&_nc_sid=5b3566" alt="Image 1" id="switchImage">
+    </div>
+
+<script>
+    const img = document.getElementById('switchImage');
+    let isFirstImage = true;
+
+    const image1 = 'https://scontent.fmaa2-1.fna.fbcdn.net/o1/v/t0/f2/m339/AQP9mZE28ChEZaTxqMtfkdh3AehgPfl9Hs-jvu_pr23mcdkowXT43th7n9HmjAtaKti6eVogsettirjwls392JskCuxnN-3IAHp0DeD5TrNyzYxWj3tCn1FLvQUNm6sA.jpeg?_nc_ht=scontent.fmaa2-1.fna.fbcdn.net&_nc_gid=fkAV9I5UgVM-Tw_YVZvFpg&_nc_cat=109&_nc_oc=AdnUJCqGwJ58ErqRRzBJ_ruJ-TyQMzUiSYHEf97Q_d-LqctFN7uNmdLQl2foBfrtHvZ7DiBtYkBwJJ2ao3ttuyAu&ccb=9-4&oh=00_AfY1J4oTEOMzzM3NRhm7iqCKa3puOQlOHcsnwtbBQiCBsw&oe=68BC759E&_nc_sid=5b3566';
+    const image2 = 'https://sdmntprwestus.oaiusercontent.com/files/00000000-d7ac-6230-81a8-ee77f0c7e495/raw?se=2025-09-05T10%3A24%3A55Z&sp=r&sv=2024-08-04&sr=b&scid=721482dc-e8bf-5549-9780-bdc4597e625a&skoid=e9d2f8b1-028a-4cff-8eb1-d0e66fbefcca&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-09-05T06%3A27%3A08Z&ske=2025-09-06T06%3A27%3A08Z&sks=b&skv=2024-08-04&sig=vqJMSqUxsFgVhS3wLTTXsovFEw9yuqexo0hoKjQYrKo%3D';
+
+img.addEventListener('click', () => {
+        img.style.opacity = 0;
+        setTimeout(() => {
+            img.src = isFirstImage ? image2 : image1;
+            
+            if (isFirstImage) {
+                img.classList.add('flipped');
+            } else {
+                img.classList.remove('flipped');
+            }
+            
+            isFirstImage = !isFirstImage;
+            img.style.opacity = 1;
+        }, 300);
+    });
+
+    const overlay = document.getElementById('passwordOverlay');
+    const mainContent = document.getElementById('mainContent');
+    const passwordInput = document.getElementById('passwordInput');
+    const submitButton = document.getElementById('submitPassword');
+    const errorMsg = document.getElementById('errorMsg');
+
+const VALID_PASSWORDS = ["Prabhakaran", "Prabakaran", "Prabhakar", "Prabakar", "prabhakaran", "prabakaran", "prabhakar", "prabakar"];
+
+submitButton.addEventListener('click', () => {
+    const entered = passwordInput.value;
+    if (VALID_PASSWORDS.includes(entered)) {
+        overlay.classList.add('hidden');
+        mainContent.classList.add('active');
+    } else {
+        errorMsg.style.display = 'block';
+        passwordInput.value = '';
+    }
+});
+
+passwordInput.addEventListener('keydown', (e) => {
+    if(e.key === 'Enter') {
+        submitButton.click();
+    }
+});
+</script>
+</body>
+</html>
