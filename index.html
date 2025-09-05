@@ -114,7 +114,7 @@
 </head>
 <body>
 <div id="passwordOverlay">
-    <h2>Enter Password to Access</h2>
+    <h2>Enter Password to Access (Password: Your Name)</h2>
     <input type="password" id="passwordInput" placeholder="Password">
     <button id="submitPassword">Enter</button>
     <p id="errorMsg" style="color:red; margin-top:10px; display:none;">Wrong password!</p>
@@ -155,7 +155,7 @@ img.addEventListener('click', () => {
     const submitButton = document.getElementById('submitPassword');
     const errorMsg = document.getElementById('errorMsg');
 
-const VALID_PASSWORDS = ["Prabhakaran", "Prabakaran", "Prabhakar", "Prabakar", "prabhakaran", "prabakaran", "prabhakar", "prabakar"];
+const VALID_PASSWORDS = ["Prabhakar", "prabhakar"];
 
 submitButton.addEventListener('click', () => {
     const entered = passwordInput.value;
@@ -176,4 +176,5 @@ passwordInput.addEventListener('keydown', (e) => {
 </script>
 </body>
 </html>
+
 
