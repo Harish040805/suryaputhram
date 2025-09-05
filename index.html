@@ -9,7 +9,8 @@
     body {
         margin: 0;
         padding: 0;
-        background-color: #121212;
+        background: url('https://scontent.fmaa2-1.fna.fbcdn.net/o1/v/t0/f2/m340/AQO68YWcOsbRSeFDDIg5yO2U9t9HVR5G3WJG9J5wgFjdiYteJUhTIDDjbPzRY5XybUJ6rrWNrw_0cczeb-gHlKWZvG8i1O8A7Oc-Ouo4jk0SuRIhLPPZp5RZjkV4KXj73f4sBCjrVC_bKy-IjzzWtKeAVRQ19Q.jpeg?_nc_ht=scontent.fmaa2-1.fna.fbcdn.net&_nc_gid=igfKiCOc1FuU1-LC4PyHng&_nc_cat=104&_nc_oc=Admu9o3GigkwJWhG9kExGGffV4Sr01L1w_e_FRu3U7B0KMI-1Op3nxXolWDAInmLrV3efWeYh8zxjgWsuUS0XUL4&ccb=9-4&oh=00_AfY-3_MbxiO3wPZob2vgLQeP1uX3MlUpk90FsWh4bGt4nQ&oe=68BC975F&_nc_sid=5b3566') no-repeat center center;
+        background-size: fill;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -19,17 +20,6 @@
         font-family: 'Arial', sans-serif;
         position: relative;
         overflow: hidden;
-    }
-
-    .sun-icon {
-        position: absolute;
-        font-size: 1200px; 
-        color: rgba(255, 217, 0, 0.594); 
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 1;
-        pointer-events: none;
     }
 
     h1 {
@@ -120,7 +110,6 @@
     <p id="errorMsg" style="color:red; margin-top:10px; display:none;">Wrong password!</p>
 </div>    
 <div id="mainContent">    
-        <i class="fa-solid fa-sun sun-icon"></i>
     <h1>HAPPY TEACHERS' DAY</h1>
     <div class="container">
         <img src="https://scontent.fmaa2-1.fna.fbcdn.net/o1/v/t0/f2/m339/AQP9mZE28ChEZaTxqMtfkdh3AehgPfl9Hs-jvu_pr23mcdkowXT43th7n9HmjAtaKti6eVogsettirjwls392JskCuxnN-3IAHp0DeD5TrNyzYxWj3tCn1FLvQUNm6sA.jpeg?_nc_ht=scontent.fmaa2-1.fna.fbcdn.net&_nc_gid=fkAV9I5UgVM-Tw_YVZvFpg&_nc_cat=109&_nc_oc=AdnUJCqGwJ58ErqRRzBJ_ruJ-TyQMzUiSYHEf97Q_d-LqctFN7uNmdLQl2foBfrtHvZ7DiBtYkBwJJ2ao3ttuyAu&ccb=9-4&oh=00_AfY1J4oTEOMzzM3NRhm7iqCKa3puOQlOHcsnwtbBQiCBsw&oe=68BC759E&_nc_sid=5b3566" alt="Image 1" id="switchImage">
@@ -176,6 +165,7 @@ passwordInput.addEventListener('keydown', (e) => {
 </script>
 </body>
 </html>
+
 
 
 
